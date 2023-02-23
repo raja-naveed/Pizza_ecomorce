@@ -1,10 +1,20 @@
+import { BrowserRouter as Router } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Products from "./pages/Products";
+import Navigation from "./components/Navigation";
+import Cart from "./pages/Cart";
 
 function App() {
   return (
-    <div className="container flex flex-row items-center justify-center">
-      <h1 className="text text-xl">React App</h1>
-      <h2>This is tribute to Thalaivaaar</h2>
-    </div >
+    <Router>
+            <Navigation />
+            <Routes>
+                <Route path="/" element={<Home />} exact />
+                <Route path="/products" element={<Products />} />
+                <Route path="/cart" element={<Cart />} /> 
+            </Routes>
+    </Router>
   );
 }
 
